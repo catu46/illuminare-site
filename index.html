@@ -231,10 +231,13 @@ section[id]{scroll-margin-top:var(--topo-h)}
 /* Portrait composition: the sculpture is above the text, with a soft paper veil behind each passage. */
 @media (max-width:900px){
  :root{--topo-h:64px}
+ .palco-fixo::after{content:"";position:absolute;z-index:1;inset:auto 0 0;height:128px;background:linear-gradient(to bottom,transparent,var(--campo) 40px,var(--campo));opacity:var(--base-clara,1);pointer-events:none}
+ .palco-col{z-index:2}
+ .palco-pe{z-index:3}
  .palco-col{left:var(--gutter);right:var(--gutter);top:calc(var(--topo-h) + 12px);bottom:62px}
  .quadro{justify-content:flex-end}
  .quadro-conteudo{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;width:100%;isolation:isolate}
- .quadro-conteudo::before{content:"";position:absolute;z-index:-1;inset:-52px calc(-1 * var(--gutter)) -18px;background:linear-gradient(to bottom,transparent,var(--campo) 52px,var(--campo));pointer-events:none}
+ .quadro-conteudo::before{content:"";position:absolute;z-index:-1;inset:-52px calc(-1 * var(--gutter)) -80px;background:linear-gradient(to bottom,transparent,var(--campo) 52px,var(--campo));pointer-events:none}
  .palco h1{font-size:clamp(44px,10.4vw,72px);line-height:.98;letter-spacing:-.045em}
  .palco h1 span{display:block}
  .palco-dica{margin-top:0;font-size:10px}
@@ -255,6 +258,7 @@ section[id]{scroll-margin-top:var(--topo-h)}
 @media (max-height:600px),(prefers-reduced-motion:reduce){
  .palco{height:auto;margin-top:0}
  .palco-fixo{position:relative;height:auto;min-height:calc(100svh - var(--topo-h));overflow:visible}
+ .palco-fixo::after{display:none}
  .palco-tela{position:relative;height:70vh;max-height:640px}
  .palco-col{position:relative;inset:auto;display:grid;gap:44px;padding:20px var(--gutter) 56px;pointer-events:auto;max-width:760px;margin:0 auto}
  .quadro{position:static;opacity:1!important;transform:none!important;pointer-events:auto}
@@ -314,7 +318,8 @@ section[id]{scroll-margin-top:var(--topo-h)}
             <p class="palco-dica" aria-hidden="true"><i></i>Role para continuar</p>
           </div></div>
           <div class="quadro" data-quadro="1"><div class="quadro-conteudo">
-            <p class="frase" data-palavras>Com a Revolução Industrial, máquinas passaram a assumir parte do esforço físico.</p>
+            <p class="frase" data-palavras>Com a Revolução Industrial, máquinas passaram a assumir parte do esforço físico do cotidiano.</p>
+            <p class="frase frase-m" data-palavras>Nas academias, reservamos tempo para exercitar o corpo e fazer um esforço que a rotina nem sempre pede.</p>
           </div></div>
           <div class="quadro" data-quadro="2"><div class="quadro-conteudo">
             <p class="frase frase-dados" data-palavras>Nossos passos, preferências, pontos fortes e dificuldades viram dados. Algoritmos aprendem nossos modos de ser e falar.</p>
@@ -719,6 +724,7 @@ const Palco = {
     if (r.bottom < 0 || r.top > window.innerHeight) return;
     // O texto encerra antes da tinta: a próxima seção introduz a origem da ideia.
     const peVisivel = 1 - faixa(p, 0.85, 0.91);
+    this.fixo.style.setProperty("--base-clara", parado ? "0" : (1 - faixa(p, 0.87, 0.93)).toFixed(3));
     this.quadros.forEach((q, i) => {
       const [a, b, c, d] = this.QUADROS[i];
       const ent = i === 0 ? 1 : suave(faixa(p, a, b)), sai = suave(faixa(p, c, d)), op = ent * (1 - sai);
