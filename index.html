@@ -122,8 +122,7 @@ button{cursor:pointer}
 .palco-dica i{position:relative;width:1.5px;height:30px;background:var(--linha-forte);overflow:hidden}
 .palco-dica i::after{content:"";position:absolute;left:0;top:-12px;width:1.5px;height:12px;background:var(--tinta);animation:dica 1.8s cubic-bezier(.5,0,.5,1) infinite}
 @keyframes dica{to{transform:translateY(42px)}}
-.frase{font-size:clamp(30px,3.9vw,56px);line-height:1.06;letter-spacing:-.034em;max-width:13em;text-wrap:balance}
-.frase-m{font-size:clamp(22px,2.5vw,36px);line-height:1.14;letter-spacing:-.024em;max-width:18em}
+.frase{font-size:clamp(24px,2.55vw,38px);line-height:1.16;letter-spacing:-.024em;max-width:24em;text-wrap:pretty}
 .frase .w,.verbos .w,.ideia-lead .w{transition:color .35s ease}
 .palco .w{color:var(--apagado)}
 .palco .w.on{color:var(--tinta)}
@@ -196,9 +195,7 @@ button{cursor:pointer}
 
 
 /* Narrativa pública: leitura contínua depois da abertura. */
-.frase-dados{font-size:clamp(24px,2.8vw,40px);line-height:1.15;max-width:21em}
 .q-pratica{gap:18px}
-.q-pratica .frase-m{font-size:clamp(21px,2.3vw,33px)}
 section[id]{scroll-margin-top:var(--topo-h)}
 .ideia .ideia-lead{max-width:19em}
 .ideia-corpo{grid-column:5 / span 8;margin-top:44px}
@@ -242,10 +239,8 @@ section[id]{scroll-margin-top:var(--topo-h)}
  .palco h1 span{display:block}
  .palco-dica{margin-top:0;font-size:10px}
  .palco-dica i{height:22px}
- .frase{font-size:clamp(29px,6.5vw,44px);max-width:19em;line-height:1.12}
- .frase-dados{font-size:clamp(21px,4.9vw,32px);line-height:1.24;max-width:24em}
+ .frase{font-size:clamp(23px,5.5vw,32px);max-width:24em;line-height:1.2}
  .q-pratica .quadro-conteudo{gap:12px}
- .q-pratica .frase-m{font-size:clamp(19px,4.5vw,27px);line-height:1.23;max-width:24em}
  .verbos{max-width:none}
  .verbos li{font-size:clamp(23px,5.4vw,32px);padding-block:7px}
  .q-pratica .acoes{margin-top:2px}
@@ -269,8 +264,7 @@ section[id]{scroll-margin-top:var(--topo-h)}
  .palco h1 span{display:inline}
  .palco-dica,.regua,.palco-pe{display:none}
  .palco .acoes{opacity:1!important}
- .frase{font-size:clamp(28px,5.4vw,42px);max-width:22em;line-height:1.15}
- .frase-dados,.q-pratica .frase-m{font-size:clamp(23px,4.3vw,32px)}
+ .frase{font-size:clamp(23px,4.3vw,32px);max-width:24em;line-height:1.2}
  .verbos{max-width:none}
  .verbos li{font-size:clamp(24px,4.6vw,34px)}
 }
@@ -319,20 +313,15 @@ section[id]{scroll-margin-top:var(--topo-h)}
           </div></div>
           <div class="quadro" data-quadro="1"><div class="quadro-conteudo">
             <p class="frase" data-palavras>Com a Revolução Industrial, máquinas passaram a assumir parte do esforço físico do cotidiano.</p>
-            <p class="frase frase-m" data-palavras>Nas academias, reservamos tempo para exercitar o corpo e fazer um esforço que a rotina nem sempre pede.</p>
+            <p class="frase" data-palavras>À medida que a rotina passou a exigir menos do corpo, exercitá-lo se tornou uma escolha deliberada: reservar tempo e frequentar espaços dedicados a isso, como as academias.</p>
           </div></div>
           <div class="quadro" data-quadro="2"><div class="quadro-conteudo">
-            <p class="frase frase-dados" data-palavras>Nossos passos, preferências, pontos fortes e dificuldades viram dados. Algoritmos aprendem nossos modos de ser e falar.</p>
-            <p class="frase frase-dados" data-palavras>Com essa intimidade, passamos a delegar escolhas, interpretações e ideias.</p>
+            <p class="frase" data-palavras>Agora, nossos passos, preferências e hábitos alimentam algoritmos que orientam o que vemos e escolhemos.</p>
+            <p class="frase" data-palavras>Com a IA, podemos delegar também decisões, a interpretação de um texto, a construção de um argumento e o desenvolvimento de uma ideia.</p>
           </div></div>
           <div class="quadro q-pratica" data-quadro="3"><div class="quadro-conteudo">
-            <p class="frase frase-m" data-palavras>O Illuminare propõe reservar tempo para</p>
-            <ul class="verbos">
-              <li data-palavras>sustentar a atenção,</li>
-              <li data-palavras>formar uma interpretação</li>
-              <li data-palavras>e desenvolver uma ideia</li>
-            </ul>
-            <p class="frase frase-m" data-palavras>antes de buscar uma resposta pronta ou abandonar uma atividade por falta de paciência.</p>
+            <p class="frase" data-palavras>O Illuminare parte de um princípio: assim como reservamos tempo para cuidar do corpo, os dias de hoje pedem atenção à nossa capacidade de pensar, criar e exercer a crítica.</p>
+            <p class="frase" data-palavras>Uma academia para o pensamento. Um espaço para praticar essas capacidades e continuar participando da elaboração das nossas próprias ideias.</p>
             <div class="acoes"><button class="botao" type="button" disabled aria-describedby="status-produto">Começar · em breve</button><button class="botao botao-contorno" type="button" data-rolar="experiencia">Conhecer a proposta</button></div>
           </div></div>
         </div>
